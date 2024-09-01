@@ -3,8 +3,8 @@ description = "Xtensa ESP32 light runtime implementation"
 version = "0.1.0-dev"
 
 authors = ["Ron Tesler"]
-maintainers-logins = ["joebeazelman"]
 tags = ["ada", "xtensa", "esp32"]
+maintainers = ["joebeazelman@github.com", "rowsail@github.com"]
 
 project-files = "runtime_build.gpr"
 
