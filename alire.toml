@@ -8,5 +8,3 @@ maintainers = ["joebeazelman@github.com", "rowsail@github.com"]
 maintainers-logins = ["joebeazelman", "rowsail"]
 project-files = "runtime_build.gpr"
 
-[[depends-on]]
-gnat_xtensa_elf = "*" # Any compiler targeting Xtensa ESP
