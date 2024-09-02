@@ -2,6 +2,9 @@
 
 <gprconfig>
   <configuration>
+   <targets>
+      <target name=".*-elf$" />
+    </targets>
    <config>
   package Compiler is
      Common_Required_Switches := ();
@@ -14,7 +17,12 @@
         Compiler'Leading_Required_Switches ("C") &amp;
         Common_Required_Switches;
   end Compiler;
-
+  for Archive_Builder  use ("${TARGET}-ar", "cr");
+  for Archive_Builder_Append_Option use ("q");
+  for Archive_Indexer  use ("${TARGET}-ranlib");
+  for Archive_Suffix   use ".a";
+  for Library_Support  use "static_only";
+  for Library_Builder  use "${GPRCONFIG_PREFIX}libexec/gprbuild/gprlib";
    </config>
   </configuration>
 </gprconfig>
