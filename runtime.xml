@@ -2,27 +2,35 @@
 
 <gprconfig>
   <configuration>
-   <targets>
+    <targets>
       <target name=".*-elf$" />
     </targets>
-   <config>
-  package Compiler is
-     Common_Required_Switches := ();
+    <config><![CDATA[
+   package Compiler is
+      Common_Required_Switches := ();
 
-     for Leading_Required_Switches ("Ada") use
-        Compiler'Leading_Required_Switches ("Ada") &amp;
-        Common_Required_Switches;
+      for Leading_Required_Switches ("Ada") use
+         Compiler'Leading_Required_Switches ("Ada") &
+         Common_Required_Switches;
 
-     for Leading_Required_Switches ("C") use
-        Compiler'Leading_Required_Switches ("C") &amp;
-        Common_Required_Switches;
-  end Compiler;
-  for Archive_Builder  use ("${TARGET}-ar", "cr");
-  for Archive_Builder_Append_Option use ("q");
-  for Archive_Indexer  use ("${TARGET}-ranlib");
-  for Archive_Suffix   use ".a";
-  for Library_Support  use "static_only";
-  for Library_Builder  use "${GPRCONFIG_PREFIX}libexec/gprbuild/gprlib";
-   </config>
+      for Leading_Required_Switches ("C") use
+         Compiler'Leading_Required_Switches ("C") &
+         Common_Required_Switches;
+   end Compiler;
+
+   package Linker is
+      for Required_Switches use Linker'Required_Switches &
+        ("-nostartfiles",
+         "-nodefaultlibs");
+   end Linker;
+
+   for Archive_Builder  use ("${TARGET}-ar", "cr");
+   for Archive_Builder_Append_Option use ("q");
+   for Archive_Indexer  use ("${TARGET}-ranlib");
+   for Archive_Suffix   use ".a";
+   for Library_Support  use "static_only";
+   for Library_Builder  use "${GPRCONFIG_PREFIX}libexec/gprbuild/gprlib";
+]]>
+    </config>
   </configuration>
 </gprconfig>
