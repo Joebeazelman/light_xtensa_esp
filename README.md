@@ -22,9 +22,8 @@ Project is in alpha stage
 
 2. Issue the following commands in your terminal:
    ```
-   git clone https://github.com/rowsail/AdaExtensa-RTS.git
-   cd AdaExtensa-RTS
-   alr toolchain --select gnat_xtensa_esp32_elf gprbuild
+   git clone git@github.com:Joebeazelman/light_xtensa_esp.git
+   cd light_xtensa_esp
    alr build
    ```
 
