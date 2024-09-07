@@ -10,3 +10,9 @@ project-files = "runtime_build.gpr"
 
 [[depends-on]]
 gnat_xtensa_esp32_elf = "^14"
+
+[environment.'case(os)']
+linux = { XTENSA_GNU_CONFIG.set = "xtensa_esp32s3.so" }
+windows = { XTENSA_GNU_CONFIG.set = "xtensa_esp32s3.dll" }
+macos = { XTENSA_GNU_CONFIG.set = "xtensa_esp32s3.dylib" }
+
