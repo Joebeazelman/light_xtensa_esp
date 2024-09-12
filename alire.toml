@@ -1,11 +1,12 @@
 name = "light_xtensa_esp"
 description = "Xtensa ESP32 light runtime implementation"
 version = "0.1.0-dev"
-
-authors = ["Ron Tesler"]
 tags = ["ada", "xtensa", "esp32"]
-maintainers = ["joebeazelman@github.com", "rowsail@github.com"]
+
+authors = ["Ron Tesler", "Vadim Godunko", "David Howells"]
+maintainers = ["joebeazelman@github.com", "vgodunko@gmail.com", "rowsail@github.com"]
 maintainers-logins = ["joebeazelman", "rowsail"]
+
 project-files = "runtime_build.gpr"
 
 [[depends-on]]
