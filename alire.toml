@@ -1,9 +1,15 @@
 name = "light_xtensa_esp"
 description = "Xtensa ESP32 light runtime implementation"
 version = "0.1.0-dev"
+<<<<<<< HEAD
 tags = ["ada", "xtensa", "esp32"]
 
 authors = ["Ron Tesler", "Vadim Godunko", "David Howells"]
+=======
+
+authors = ["Ron Tesler", "Vadim Godunko", "David Howells"]
+tags = ["ada", "xtensa", "esp32"]
+>>>>>>> origin/main
 maintainers = ["joebeazelman@github.com", "vgodunko@gmail.com", "rowsail@github.com"]
 maintainers-logins = ["joebeazelman", "rowsail"]
 
