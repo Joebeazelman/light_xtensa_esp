@@ -16,7 +16,7 @@ abstract project Target_Options is
   --  COMFLAGS here is common flags (used for C and Ada).
   COMFLAGS := ("-ffunction-sections",
         "-fdata-sections",
-        "-fcallgraph-info=su,da");
+        "-fcallgraph-info=su,da", "-mlongcalls");
   COMGNARLFLAGS := ("");
   COMDEBUGFLAGS := ("-g");
 

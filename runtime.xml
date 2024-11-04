@@ -15,13 +15,25 @@
 
       for Leading_Required_Switches ("C") use
          Compiler'Leading_Required_Switches ("C") &
+               ("-mlongcalls")
+         &
          Common_Required_Switches;
    end Compiler;
 
    package Linker is
       for Required_Switches use Linker'Required_Switches &
         ("-nostartfiles",
-         "-nodefaultlibs");
+        "-nodefaultlibs",
+        "-Wl,--gc-sections",
+        "-Wl,--cref",
+        "-Wl,--no-warn-rwx-segments",
+        "-fno-rtti",
+        "-fno-lto",
+        "-Wl,--gc-sections",
+        "-Wl,--warn-common",
+        "-mlongcalls", 
+        "-mtext-section-literals",
+        "-fstrict-volatile-bitfields");
    end Linker;
 
    for Archive_Builder  use ("${TARGET}-ar", "cr");
